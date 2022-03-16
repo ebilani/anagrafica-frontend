@@ -1,0 +1,22 @@
+<div class="container custom-container mt-5">
+  <div class="card-home">
+    <mat-card class="header-card">
+      <p class="view-text">Visualizza Anagrafiche o
+          <button class="link-btn" mat-button routerLink="/create">Crea uno nuovo</button>
+      </p>
+    </mat-card>
+  </div>
+  <div class="card-home">
+    <custom-card [listaAnagrafica]="anagrafiche"></custom-card>
+  </div>
+</div>
+
+<div *ngIf="isLoadingResults" class="tbl-spinner">
+  <mat-progress-spinner
+    class="spinner"
+    color="primary"
+    [diameter]="50"
+    mode="indeterminate">
+  </mat-progress-spinner>
+</div>
+

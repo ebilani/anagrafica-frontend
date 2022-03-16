@@ -1,0 +1,21 @@
+<div class="elements" *ngIf="listaAnagrafica.length">
+  <div class="anagrafica-element" *ngFor="let item of listaObservableType | async" >
+    <mat-card>
+      <mat-tab-group mat-align-tabs="start">
+        <mat-tab  [label]="item.nome" >
+            <div class="body-card">
+                <p class="description">{{item.descrizione}}</p>
+                <button class="link-btn" mat-button  (click) = "goToDetails(item.id)">Vai ai dettagli</button>
+            </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+</div>
+<mat-paginator 
+            #paginator
+            (page)="onPageChange($event)"
+            [pageSizeOptions]="pageSizeOptions">
+</mat-paginator>
+
+<anagrafica-details  *ngIf="itemSelectedProperties.length" [detailedEntity]="itemSelectedProperties"></anagrafica-details>

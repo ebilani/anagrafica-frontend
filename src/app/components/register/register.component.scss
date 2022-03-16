@@ -1,0 +1,21 @@
+@import "../../../styles.scss";
+
+form{
+    @include flex-container(column, center, initial);
+    .example-full-width::ng-deep {
+        .mat-form-field-infix {
+          @include flex-container(row, center, normal);
+        }
+      }
+
+      .link-btn {
+        @include link-button;
+      }
+      .buttons{
+        @include flex-container(row, flex-end, normal);
+        .delete-btn{
+           margin: #{$spacing-l}px #{$spacing}px;
+           border: 1px solid $color__acccent-light;
+        }
+      }
+}

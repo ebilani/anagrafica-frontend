@@ -1,0 +1,42 @@
+<div class="container create-cnt mt-5" width="50%">
+    <mat-card>
+        <form class="create-form p-5" [formGroup]="createForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="example-full-width">
+               <mat-label>Nome</mat-label>
+               <input matInput formControlName="nome" />
+               <mat-error  *ngIf = "createForm.get('nome')?.errors?.required">Questo campo è obbligatorio!</mat-error>
+               <mat-error  *ngIf = "createForm.get('nome')?.errors?.minlength">Questo campo richiede almeno 3 caratteri!</mat-error>
+               <mat-icon>person_outline</mat-icon>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Descrizione</mat-label>
+                <textarea matInput formControlName="descrizione"></textarea>
+                <mat-error  *ngIf = "createForm.get('descrizione')?.errors?.required">Questo campo è obbligatorio!</mat-error>
+                <mat-error  *ngIf = "createForm.get('descrizione')?.errors?.minlength">Questo campo richiede almeno 5 caratteri!</mat-error>
+                <mat-icon> list_alt</mat-icon>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                 <mat-label>Genere</mat-label>
+                 <mat-select formControlName="genere">
+                    <mat-option *ngFor="let gender of genderValues" [value]="gender.value">{{gender.showValue}}</mat-option>
+                 </mat-select>
+                <mat-error  *ngIf = "createForm.get('genere')?.errors?.required">Questo campo è obbligatorio!</mat-error>
+                 <mat-icon>people_outline</mat-icon>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Tipologie Anagrafiche</mat-label>
+                <mat-select formControlName="tipAnagId">
+                   <mat-option *ngFor="let gender of listaTipologie" [value]="gender.id">{{gender.descrizione}}</mat-option>
+                </mat-select>
+                <mat-error  *ngIf = "createForm.get('tipAnagId')?.errors?.required">Questo campo è obbligatorio!</mat-error>
+                <mat-icon> notes </mat-icon>
+            </mat-form-field>
+            <div class="example-full-width" >
+              <div class="buttons">
+                  <button class="submit-btn mr-3"  type="submit" mat-raised-button   [disabled]="createForm.invalid">Submit</button>
+                  <button class="delete-btn" mat-raised-button type="button" routerLink="../lista">Annulla</button>
+                </div>
+            </div>
+          </form>
+    </mat-card>
+  </div>

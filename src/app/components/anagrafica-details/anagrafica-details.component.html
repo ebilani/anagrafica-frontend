@@ -1,0 +1,19 @@
+<div class="container anagrafica-detail">
+    <mat-card class="mt-4 mb-5 details-card">
+        <div>
+            <h2 class="nome">{{detailedEntity[0].nome}}</h2>
+        </div>
+        <div class="content-detail">
+            <div class="card colored-border">
+                <p>{{detailedEntity[0].descrizione}}</p>
+                <p class="genere"> {{detailedEntity[0].genere | formatGender}}</p>
+            </div>
+            <div class="card text-center colored-card">
+                <p>Data di Creazione</p>
+                <p class="p-0 m-0 h2 font-weight-bold"> {{ detailedEntity[0].createdAt |  date:'d' }} </p>
+                <p class="p-0 m-0 font-weight-bold"> {{ detailedEntity[0].createdAt |  date:'MMM' | uppercase }}</p>
+                <p class="p-0 m-0"> {{ detailedEntity[0].createdAt |  date:'h:mm' }}</p>
+            </div>
+        </div>
+    </mat-card>
+</div>

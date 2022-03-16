@@ -1,0 +1,33 @@
+@import "../../../styles.scss";
+.container{
+    @include flex-container(row, center, center);
+
+    .details-card{
+        @include flex-container(column, center, center);
+        border-top: 2px solid $color__accent;
+        width: 60%;
+        .nome{
+            font-family: $primary_font;
+            font-weight: $bold;
+            @include font-size(1.5);
+        }
+        .content-detail{
+         @include flex-container(row, space-evenly, center);
+         div{
+             width: 40%;
+             padding: #{$spacing-l}px;
+         }
+        }
+      }
+      .genere{
+        font-weight: $bold;
+      }
+}
+.colored-card{
+   background-color: $color__acccent-light;
+   color: $color__body;
+}
+.colored-border{
+    border: 1px solid  $color__acccent-light;
+    box-shadow: 4px 0px 11px 0px  $color__acccent-light;
+}

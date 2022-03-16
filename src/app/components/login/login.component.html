@@ -1,0 +1,26 @@
+<div class="container create-cnt mt-5 pt-5" width="50%">
+    <mat-card>
+        <form class="create-form p-5" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email"  [pattern]="patternEmail"  >
+                <mat-error  *ngIf = "loginForm.get('email')?.errors?.required">Questo campo è obbligatorio!</mat-error>
+                <mat-error  *ngIf = "loginForm.get('email')?.errors?.pattern">Enter a valid email address!</mat-error> 
+                <mat-icon> email</mat-icon>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password"  [pattern]="patternPassword">
+                <mat-error  *ngIf = "loginForm.get('password')?.errors?.required">Questo campo è obbligatorio!</mat-error>
+                <mat-error  *ngIf = "loginForm.get('password')?.errors?.pattern">Questo campo richiede almeno 6 caratteri almeno un numero e lettere minuscole e maiuscole!</mat-error>
+                <mat-icon>https</mat-icon>
+            </mat-form-field>
+            <div class="example-full-width" >
+              <div class="buttons">
+                  <button class="mr-3 link-btn"  type="submit" mat-raised-button  [disabled]="loginForm.invalid">Accedi</button>
+                  <button class="delete-btn" mat-raised-button type="button" (click)="loginForm.reset()">Annulla</button>
+                </div>
+            </div>
+          </form>
+    </mat-card>
+  </div>

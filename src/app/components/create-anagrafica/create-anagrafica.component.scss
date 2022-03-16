@@ -1,0 +1,26 @@
+@import "../../../styles.scss";
+.create-form {
+  @include flex-container(column, center, normal);
+}
+.delete-btn {
+  background-color: $color__primary;
+}
+.submit-btn {
+  background-color: $color__acccent-light;
+  margin-right: 10px !important;
+}
+.example-full-width::ng-deep {
+  .mat-form-field-infix {
+    @include flex-container(row, center, normal);
+  }
+}
+.buttons {
+  margin-top: #{$spacing-l}px;
+  @include flex-container(row, flex-end, normal);
+}
+.create-cnt {
+  width: 50%;
+  @include breakpoint(sm) {
+    width: 100%;
+  }
+}

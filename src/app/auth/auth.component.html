@@ -1,0 +1,37 @@
+
+<div class="homepage d-flex mb-5">
+    <div class="login-page">
+      <login *ngIf="!showSignUp"></login>
+       <register  *ngIf="showSignUp"></register> 
+    </div>
+    <div class="register-page">
+        <div class="mt-5 register">
+            <mat-card *ngIf="!showSignUp">
+                <ng-template pTemplate="header">
+                <h3 class="m-3 text-center surface-a pt-5" color = "primary-color">Registrazione</h3> 
+                </ng-template>
+                <div class="custom-body mt-5 pt-3">
+                    <h2 class="register-text">Iscriviti ora!</h2>
+                    <p class="text-center" style="width: 50%;">Inserisci i tuoi dati personali per ottenere un nuovo account.</p>
+                    <div class="mt-5 btn-container mb-5">
+                        <button class="link-btn" mat-button routerLink="/create" class="p-button-raised p-button-rounded custom-btn" (click) = "showSignUpForm()">Iscriversi</button>
+                    </div>
+                </div>
+            </mat-card>
+            <mat-card  *ngIf="showSignUp">
+                <ng-template pTemplate="header">
+                <h3 class="m-3 text-center surface-a pt-5" color = "primary-color">Accedi</h3> 
+                </ng-template>
+                <div class="custom-body mt-5 pt-3">
+                    <h2 class="register-text">Accedi ora!</h2>
+                    <p>Inserisci i tuoi dati personali per accedere.</p>
+                    <div class="mt-5 btn-container mb-5">
+                        <button class="link-btn" mat-button routerLink="/create" class="p-button-raised p-button-rounded custom-btn" (click) = "showLoginForm()">Accedi</button>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+
