@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit {
     let successLabel: any
     this.authService.login(this.loginForm.value).pipe(
       tap((user: any)=>{
-        console.log(user)
-        successLabel = user.message;
+        console.log(user);
+        user.email ?  successLabel = user.message : errorLabel = user.message;
       }),
       finalize(()=>{
         if(errorLabel){
