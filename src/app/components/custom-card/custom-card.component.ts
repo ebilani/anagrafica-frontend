@@ -49,7 +49,7 @@ export class CustomCardComponent implements OnInit {
         console.log(el)
       }),
       finalize(()=>{
-        const childComponentTemplate = document.getElementsByClassName(' anagrafica-detail');
+        const childComponentTemplate = document.getElementsByClassName('anagrafica-detail');
         setTimeout(() => {
          childComponentTemplate[0].scrollIntoView({ behavior: "smooth", block: "start" });
         });

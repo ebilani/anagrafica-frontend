@@ -13,6 +13,7 @@
         }
         .content-detail{
          @include flex-container(row, space-evenly, center);
+         width: 100%;
          div{
              width: 40%;
              padding: #{$spacing-l}px;
